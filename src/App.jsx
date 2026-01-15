@@ -5,6 +5,7 @@ import About from "./views/About";
 import Contact from "./views/Contact";
 import Header from "./components/Header";
 import Products from "./views/Products";
+import ProDetails from "./views/ProDetails";
 
 function App() {
   const cloths = [
@@ -109,6 +110,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products cloths={cloths}/>} />
+          <Route path="/products/:id" element={<ProDetails cloths={cloths}/>} />
         </Routes>
       </Router>
     </div>

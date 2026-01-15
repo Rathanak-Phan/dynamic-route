@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function Products({ cloths }) {
   return (
     <div className="px-[15vw]">
+      <h2 className="text-center my-[50px] text-3xl font-bold">List products</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {cloths.map((item) => (
           <div
@@ -20,7 +21,7 @@ function Products({ cloths }) {
             </div>
             <div className="p-5 flex justify-center">
                 <button className="border-0 px-5 py-3 bg-blue-300 rounded-md">
-                    <Link>View details</Link>
+                    <Link to={`/products/${item.id}`}>View details</Link>
                 </button>
             </div>
           </div>

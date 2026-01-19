@@ -6,6 +6,7 @@ import Contact from "./views/Contact";
 import Header from "./components/Header";
 import Products from "./views/Products";
 import ProDetails from "./views/ProDetails";
+import { useState } from "react";
 
 function App() {
   const cloths = [
@@ -101,15 +102,21 @@ function App() {
     },
   ];
 
+  const [ card, Setcard ] = useState([]);
+
+  const Add = (item) => {
+    Setcard((prev) => [...prev, item]);
+  }
+
   return (
     <div>
       <Router>
-        <Header />
+        <Header card={card}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Products cloths={cloths}/>} />
+          <Route path="/products" element={<Products cloths={cloths} Add={Add}/>} />
           <Route path="/products/:id" element={<ProDetails cloths={cloths}/>} />
         </Routes>
       </Router>

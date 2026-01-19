@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Products({ cloths }) {
+function Products({ cloths, Add }) {
   return (
     <div className="px-[15vw]">
-      <h2 className="text-center my-[50px] text-3xl font-bold">List products</h2>
+      <h2 className="text-center my-[50px] text-3xl font-bold">
+        List products
+      </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {cloths.map((item) => (
           <div
@@ -19,10 +21,15 @@ function Products({ cloths }) {
                 <p>{item.rate} 🌟</p>
               </div>
             </div>
-            <div className="p-5 flex justify-center">
+            <div className="p-5 flex justify-between">
+              <Link to={`/products/${item.id}`}>
                 <button className="border-0 px-5 py-3 bg-blue-300 rounded-md">
-                    <Link to={`/products/${item.id}`}>View details</Link>
+                  View details
                 </button>
+              </Link>
+              <button onClick={() => Add(item)} className="border-0 px-5 py-3 bg-blue-300 rounded-md">
+                +
+              </button>
             </div>
           </div>
         ))}

@@ -31,13 +31,15 @@ function Header({ card }) {
         </ul>
       </nav>
       <div className="flex gap-3">
-        <div className="relative inline-block">
-          <FaShoppingCart className="text-2xl" />
+        <Link to={"/card"}>
+          <div className="relative inline-block">
+            <FaShoppingCart className="text-2xl" />
 
-          <div className="absolute -top-2 -right-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs">
-            {card.length}
+            <div className="absolute -top-2 -right-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs">
+              {card.length}
+            </div>
           </div>
-        </div>
+        </Link>
         <button className="border px-5 py-1 rounded-md ">Login</button>
         <button className="border px-5 py-1 rounded-md bg-blue-400">
           Register

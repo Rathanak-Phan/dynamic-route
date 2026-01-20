@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Products from "./views/Products";
 import ProDetails from "./views/ProDetails";
 import { useState } from "react";
+import Card from "./views/Card";
 
 function App() {
   const cloths = [
@@ -89,7 +90,7 @@ function App() {
       dis: "Stretchy fabric for active lifestyle.",
       rate: 4.6,
       image:
-        "https://zandokh.com/image/cache/catalog/products/2025-12/10112510071%20Replace/SLY-8-cr-450x672.jpg",
+        "https://zandokh.com/image/cache/catalog/products/2026-01/5152505143/TAKK3533-cr-450x672.jpg",
     },
     {
       id: 10,
@@ -118,6 +119,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products cloths={cloths} Add={Add}/>} />
           <Route path="/products/:id" element={<ProDetails cloths={cloths}/>} />
+          <Route path="/card" element={<Card  card={card}/>} />
         </Routes>
       </Router>
     </div>

@@ -19,7 +19,11 @@ function ProDetails({ cloths }) {
         </div>
         <div className="bg-gray-300 h-9/10 w-full p-5 rounded-lg">
           <p className="text-5xl font-bold">{product.title}</p>
-          <p className="text-2xl my-2">{product.dis}</p>
+          <p className="text-2xl my-2">{product.description}</p>
+          <div>
+            <p className="text-red-500">Category : {product.category}</p>
+            <p>Price : {product.price} $</p>
+          </div>
         </div>
       </div>
     </div>

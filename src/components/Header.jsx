@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
-function Header({ card }) {
+function Header({ cart }) {
   return (
     <header className="flex items-center justify-between h-[70px] px-20 bg-gray-100">
       <div className="text-2xl">
@@ -36,7 +36,7 @@ function Header({ card }) {
             <FaShoppingCart className="text-2xl" />
 
             <div className="absolute -top-2 -right-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center text-white text-xs">
-              {card.length}
+              {cart.length}
             </div>
           </div>
         </Link>

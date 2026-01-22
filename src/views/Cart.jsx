@@ -1,13 +1,17 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 
-function Card({ card }) {
+function Cart({ cart, Remove }) {
+  if (!cart.length == 0){
+    <div className="h-screen flex justify-center items-center">Empty cart</div>
+  }
+
   return (
     <div className="flex justify-center">
       <div className="min-w-2xl">
-        {card.map((item) => (
+        {cart.map((item) => (
           <div
-            key={card.item}
+            key={cart.item}
             className="flex justify-between items-center bg-gray-200 mt-2 p-3 rounded"
           >
             <div className="flex gap-5">
@@ -16,7 +20,7 @@ function Card({ card }) {
             </div>
             <div>
               <button className="bg-red-500 p-2 rounded text-white hover:bg-red-600">
-                <FaTrash className="text-lg" />
+                <FaTrash onClick={() => Remove(item.id)} className="text-lg" />
               </button>
             </div>
           </div>
@@ -26,4 +30,4 @@ function Card({ card }) {
   );
 }
 
-export default Card;
+export default Cart;
